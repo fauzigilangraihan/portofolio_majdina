@@ -592,8 +592,30 @@ body {
     }
 
     .hero-text h1 { font-size: 32px; }
-    
-    .cta-group { justify-content: center; }
+   /* Memastikan tombol berjejer rapi atau menyesuaikan lebar */
+    .cta-group { 
+        justify-content: center;
+        flex-wrap: wrap; /* Agar jika layar sangat kecil, tombol turun otomatis */
+        gap: 10px;       /* Jarak antar tombol diperkecil */
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px; /* Padding diperkecil agar tidak terlalu 'gemuk' */
+        font-size: 14px;    /* Ukuran font disesuaikan */
+        width: auto;        /* Tombol mengikuti lebar teks, bukan full screen */
+        min-width: 140px;   /* Memberikan lebar minimal agar seimbang */
+        justify-content: center;
+    }
+
+    .btn i {
+        font-size: 14px;    /* Ukuran icon disesuaikan dengan teks */
+    }
+
+    /* Khusus untuk teks panjang di tombol agar tidak menumpuk */
+    .btn span {
+        white-space: nowrap; 
+    }
 
     .menu-toggle { display: block; }
     
