@@ -595,29 +595,62 @@ body {
     
     .cta-group { justify-content: center; }
 
-    /* Navigasi Mobile */
     .menu-toggle { display: block; }
     
     #navMenu {
         position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--secondary); /* Menu Mobile jadi Coklat */
+        top: 85px;             /* Sesuaikan agar pas di bawah header */
+        right: 20px;           /* Memberi jarak dari pinggir layar */
+        width: 200px;          /* Lebar tetap agar rapi */
+        background: var(--secondary);
+        border-radius: 15px;
+        padding: 15px 0;       /* Padding atas bawah saja */
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        transition: 0.4s;
+        gap: 0;                /* Gunakan padding pada link untuk area klik */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        
+        /* Animasi Transisi */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        z-index: 999;
     }
 
-    #navMenu.active { left: 0; }
+    /* Munculkan menu saat aktif */
+    #navMenu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
     #navMenu a {
-        color: #fff; /* Teks Putih di menu coklat */
-        margin: 20px 0;
-        font-size: 24px;
+        color: #fff;
+        margin: 0;             /* Reset margin */
+        padding: 12px 25px;    /* Area klik yang luas */
+        font-size: 12px;
+        font-weight: 500;
+        text-align: left;
+        width: 100%;
+        display: block;        /* Memastikan link memenuhi lebar menu */
+        border-bottom: 1px solid rgba(255,255,255,0.05); /* Garis halus */
+        transition: 0.3s;
     }
 
-    #navMenu a:hover { color: var(--primary); }
-    #navMenu a::after { display: none; }
+    /* Hilangkan garis bawah di item terakhir */
+    #navMenu a:last-child {
+        border-bottom: none;
+    }
+
+    #navMenu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary);
+        padding-left: 30px;    /* Efek geser kecil saat di-hover */
+    }
+
+    /* Matikan animasi underline desktop di mobile */
+    #navMenu a::after {
+        display: none;
+    }
 }
