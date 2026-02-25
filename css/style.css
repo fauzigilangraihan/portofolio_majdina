@@ -1,0 +1,623 @@
+/* ================= VARIABLES & THEME (GOLDEN COFFEE) ================= */
+:root {
+    /* --- PALET WARNA BARU --- */
+    --primary: #f9c80e;         /* Kuning Emas */
+    --primary-hover: #ffdb4d;   /* Kuning Terang */
+    
+    --secondary: #4a3b32;       /* Coklat Kopi (Dark Brown) */
+    --secondary-light: #8d6e63; /* Coklat Muda (Accent) */
+
+    /* Backgrounds */
+    --bg-body: #faf9f6;         /* Cream Lembut (Lebih hangat dari putih) */
+    --bg-card: #ffffff;         /* Putih Murni */
+    --glass: rgba(255, 255, 255, 0.9);
+
+    /* Text Colors */
+    --text-main: #1a1a1a;       /* Hitam Pekat (Untuk Tulisan Utama) */
+    --text-muted: #555555;      /* Abu Gelap (Untuk Paragraf) */
+    --text-on-dark: #ffffff;    /* Teks di atas background coklat */
+
+    /* Decoration */
+    --border-radius: 16px;
+    --shadow-soft: 0 10px 30px rgba(74, 59, 50, 0.05); /* Bayangan kecoklatan tipis */
+    --shadow-hover: 0 15px 40px rgba(249, 200, 14, 0.2); /* Bayangan kuning saat hover */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    transition: var(--transition);
+    z-index: 1000;
+    top: 0;
+}
+
+.header.scrolled {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-bottom: 2px solid var(--primary); /* Garis bawah kuning */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--secondary); /* Logo warna Coklat */
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+#navMenu a {
+    color: var(--secondary); /* Menu Coklat */
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    transition: var(--transition);
+}
+
+#navMenu a:hover, #navMenu a.active {
+    color: var(--primary); /* Hover jadi Kuning */
+}
+
+/* Garis bawah animasi kuning */
+#navMenu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--primary);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+#navMenu a:hover::after, #navMenu a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--secondary);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Gradient Halus Cream ke Kuning Pudar */
+    background: linear-gradient(135deg, #fffcf5 0%, #fff4d1 100%);
+    padding-top: 80px; /* Kompensasi navbar fixed */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Ubah urutan di desktop agar teks kiri, gambar kanan */
+.hero-image {
+    order: 2; 
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-text {
+    order: 1;
+    flex: 1;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Border Coklat + Glow Kuning */
+    border: 5px solid var(--secondary); 
+    box-shadow: 0 0 0 10px rgba(249, 200, 14, 0.3), 
+                0 20px 40px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 800;
+}
+
+#typing {
+    color: var(--secondary); /* Warna Coklat untuk teks berjalan */
+    border-right: 4px solid var(--primary);
+    padding-right: 5px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+/* Buttons */
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tombol Utama: Kuning, Teks Coklat */
+.btn-primary {
+    background: var(--primary);
+    color: var(--secondary); 
+    box-shadow: 0 10px 20px rgba(249, 200, 14, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Tombol Outline: Border Coklat */
+.btn-outline {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--secondary);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* ================= SECTION STYLES ================= */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--secondary); /* Judul Coklat */
+    font-weight: 800;
+    position: relative;
+}
+
+/* Garis hiasan di bawah judul */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ================= ACHIEVEMENTS (Card Styles) ================= */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(74, 59, 50, 0.1); /* Border Coklat Tipis */
+    transition: var(--transition);
+    text-align: center;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-hover);
+}
+
+.img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    inset: 0;
+    background: rgba(74, 59, 50, 0.8); /* Overlay Coklat */
+    color: var(--primary); /* Teks Kuning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.achievement-card:hover .overlay-text { opacity: 1; }
+
+.achievement-card h4 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.achievement-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ================= ABOUT ================= */
+.about-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border-left: 6px solid var(--primary); /* Aksen Kiri Kuning */
+}
+
+.skills-wrapper h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background: #fff8e1; /* Kuning sangat muda */
+    color: var(--secondary);
+    border: 1px solid var(--primary);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.skill-tag i { font-size: 18px; }
+
+.skill-tag:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    border-color: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* ================= PROJECTS ================= */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    height: 250px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(249, 200, 14, 0.95); /* Kuning Solid Transparan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover img { transform: scale(1.1); }
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-overlay h3 {
+    color: var(--secondary); /* Judul Coklat */
+    transform: translateY(20px);
+    transition: 0.4s;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.project-overlay p {
+    color: #000; /* Hitam sesuai request */
+    margin: 10px 0 20px;
+    font-size: 14px;
+    transform: translateY(20px);
+    transition: 0.4s 0.1s;
+}
+
+.project-card:hover h3, .project-card:hover p {
+    transform: translateY(0);
+}
+
+.btn-small {
+    background: var(--secondary);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.btn-small:hover {
+    background: #fff;
+    color: var(--secondary);
+}
+
+/* ================= CONTACT FORM ================= */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border-top: 5px solid var(--secondary); /* Atas Coklat */
+}
+
+.input-group { margin-bottom: 20px; }
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: #fdfdfd;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    color: var(--text-main);
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form textarea { height: 150px; resize: none; }
+
+/* Fokus jadi Coklat */
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--secondary);
+    background: #fffcf5;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background: var(--secondary); /* Tombol Coklat */
+    color: var(--primary); /* Teks Kuning */
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form button:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    box-shadow: 0 5px 15px rgba(249, 200, 14, 0.4);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: var(--secondary); /* Footer Coklat Gelap */
+    color: #e0e0e0;
+    padding: 50px 0 30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.social-icons a {
+    color: var(--primary); /* Icon Kuning */
+    font-size: 28px;
+    margin: 0 15px;
+    transition: 0.3s;
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* ================= LOADER & SCROLL ================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: var(--primary);
+    z-index: 2000;
+}
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fffcf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #ddd;
+    border-top: 4px solid var(--secondary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 968px) {
+    .hero-content {
+        flex-direction: column; /* Gambar di atas, teks di bawah */
+        text-align: center;
+        padding-top: 40px;
+        gap: 30px;
+    }
+
+    .hero-image { order: 1; }
+    .hero-text { order: 2; }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-text h1 { font-size: 32px; }
+    
+    .cta-group { justify-content: center; }
+
+    /* Navigasi Mobile */
+    .menu-toggle { display: block; }
+    
+    #navMenu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--secondary); /* Menu Mobile jadi Coklat */
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s;
+    }
+
+    #navMenu.active { left: 0; }
+
+    #navMenu a {
+        color: #fff; /* Teks Putih di menu coklat */
+        margin: 20px 0;
+        font-size: 24px;
+    }
+
+    #navMenu a:hover { color: var(--primary); }
+    #navMenu a::after { display: none; }
+}

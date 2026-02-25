@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Majdina Nublah Tamimi Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="scroll-progress"></div>
+
+<div class="loader-wrapper">
+    <div class="loader"></div>
+</div>
+
+<header class="header">
+    <div class="container nav">
+        <a href="#home" class="logo">
+            <img src="images/logo.png" alt="Logo">
+            PORTOFOLIO
+        </a>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="bx bx-menu"></i>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hello, I'm <br><span id="typing"></span></h1>
+                <p>Informatics Student | Java & Laravel Developer | IoT Enthusiast</p>
+                <p style="font-size: 0.9em; margin-top: -10px; color: var(--text-muted);">
+                    Building efficient desktop & web applications with clean code & OOP principles.
+                </p>
+                <div class="cta-group">
+                    <a href="documents/CV_MAJDINA.pdf" download="CV_Majdina_Nublah_Tamimi" class="btn btn-primary">
+                        Download CV <i class='bx bx-download'></i>
+                    </a>
+                    <a href="#projects" class="btn btn-outline">View Projects <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/profil.jpeg" alt="Majdina Nublah Tamimi">
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Java Development">
+                        <div class="overlay-text">Java Expert</div>
+                    </div>
+                    <h4>Java Development & OOP</h4>
+                    <p>Pengembangan aplikasi desktop (Swing/JavaFX) dengan konsep Object-Oriented Programming yang kuat.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=600&auto=format&fit=crop" alt="MySQL Database">
+                        <div class="overlay-text">Database Mgmt</div>
+                    </div>
+                    <h4>MySQL Database Management</h4>
+                    <p>Perancangan dan pengelolaan struktur basis data relasional yang efisien dan terstruktur.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="System Analysis">
+                        <div class="overlay-text">Problem Solving</div>
+                    </div>
+                    <h4>System Analysis & Logic</h4>
+                    <p>Kemampuan analisis sistem, algoritma struktur data, dan pemecahan masalah yang kompleks.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop" alt="Education">
+                        <div class="overlay-text">STMIK Mardira</div>
+                    </div>
+                    <h4>Software Engineering</h4>
+                    <p>Mahasiswa Informatika STMIK Mardira Indonesia (2023-Now) dengan fokus Rekayasa Perangkat Lunak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about reveal">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <p>
+                    Halo, saya <strong>Majdina Nublah Tamimi</strong>.<br><br>
+                    Saya adalah mahasiswa Informatika yang memiliki minat dalam pengembangan aplikasi berbasis <strong>Java</strong>. Terbiasa menggunakan Java untuk membangun aplikasi desktop dan memahami konsep <em>Object-Oriented Programming (OOP)</em>, struktur data, serta dasar pengembangan sistem.<br><br>
+                    Saya memiliki kemampuan <em>problem solving</em> yang baik, mampu bekerja dalam tim, serta selalu bersemangat untuk mempelajari teknologi baru.
+                </p>
+                <div class="skills-wrapper">
+                    <h3>Tech Stack</h3>
+                    <div class="skills">
+                        <span class="skill-tag"><i class='bx bxl-java'></i> Java</span>
+                        <span class="skill-tag"><i class='bx bxl-php'></i> Laravel</span>
+                        <span class="skill-tag"><i class='bx bx-chip'></i> IoT</span>
+                        <span class="skill-tag"><i class='bx bxl-html5'></i> HTML5</span>
+                        <span class="skill-tag"><i class='bx bxl-css3'></i> CSS3</span>
+                        <span class="skill-tag"><i class='bx bxl-javascript'></i> JavaScript</span>
+                        <span class="skill-tag"><i class='bx bxl-git'></i> Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=600&auto=format&fit=crop" alt="Library System">
+                    <div class="project-overlay">
+                        <h3>Library Management System</h3>
+                        <p>Aplikasi desktop Java & MySQL untuk kelola peminjaman buku.</p>
+                        <a href="#" class="btn-small">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop" alt="Student Management">
+                    <div class="project-overlay">
+                        <h3>Student Data Manager</h3>
+                        <p>Aplikasi CRUD Data Mahasiswa berbasis Java OOP & Swing.</p>
+                        <a href="#" class="btn-small">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Portfolio Website">
+                    <div class="project-overlay">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>Website personal branding responsif (HTML, CSS, JS).</p>
+                        <a href="#" class="btn-small">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Send Message <i class='bx bx-send'></i></button>
+                <div id="formStatus"></div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/majdina-nublah-tamimi-620303264"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.tiktok.com/@rahasnt"><i class='bx bxl-tiktok'></i></a>
+            <a href="https://www.instagram.com/mdnaaantt"><i class='bx bxl-instagram'></i></a>
+        </div>
+        <p>© 2026 Majdina Nublah Tamimi. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("VeS2TqJ_Y1zl7I3OH"); 
+   })();
+</script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
