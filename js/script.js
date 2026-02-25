@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
 /* ================= TYPING EFFECT (TEXT BERJALAN) ================= */
 const typingElement = document.getElementById("typing");
 if (typingElement) {
-    const words = ["Majdina Nublah Tamimi", "Java Developer", "Laravel Enthusiast"];
+    const words = ["Majdina Nublah Tamimi", "Java Developer"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
