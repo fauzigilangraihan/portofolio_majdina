@@ -198,4 +198,21 @@ if (contactForm) {
                 }, 4000);
             });
     });
+
+const audio = document.getElementById('mainAudio');
+const playBtn = document.getElementById('playBtn');
+const playIcon = document.getElementById('playIcon');
+const spotifyIcon = document.querySelector('.spotify-logo-wrapper i');
+
+function togglePlay() {
+    if (audio.paused) {
+        audio.play();
+        playIcon.className = 'bx bx-pause';
+        spotifyIcon.classList.add('playing');
+    } else {
+        audio.pause();
+        playIcon.className = 'bx bx-play';
+        spotifyIcon.classList.remove('playing');
+    }
+}
 }

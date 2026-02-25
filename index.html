@@ -75,7 +75,7 @@
                 </div>
                 <div class="achievement-card">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=600&auto=format&fit=crop" alt="MySQL Database">
+                        <img src="images/mysql.jpg" alt="MySQL Database">
                         <div class="overlay-text">Database Mgmt</div>
                     </div>
                     <h4>MySQL Database Management</h4>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="achievement-card">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="System Analysis">
+                        <img src="images/analis.avif" alt="System Analysis">
                         <div class="overlay-text">Problem Solving</div>
                     </div>
                     <h4>System Analysis & Logic</h4>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="achievement-card">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop" alt="Education">
+                        <img src="images/java.jpeg" alt="Education">
                         <div class="overlay-text">STMIK Mardira</div>
                     </div>
                     <h4>Software Engineering</h4>
@@ -131,7 +131,7 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="portfolio-grid">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=600&auto=format&fit=crop" alt="Library System">
+                    <img src="images/perpus.jpeg" alt="Library System">
                     <div class="project-overlay">
                         <h3>Library Management System</h3>
                         <p>Aplikasi desktop Java & MySQL untuk kelola peminjaman buku.</p>
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop" alt="Student Management">
+                    <img src="images/team.jpeg" alt="Student Management">
                     <div class="project-overlay">
                         <h3>Student Data Manager</h3>
                         <p>Aplikasi CRUD Data Mahasiswa berbasis Java OOP & Swing.</p>
@@ -147,10 +147,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Portfolio Website">
+                    <img src="images/kerkom.jpeg" alt="Portfolio Website">
                     <div class="project-overlay">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>Website personal branding responsif (HTML, CSS, JS).</p>
+                        <h3>Team Project</h3>
+                        <p>Create Website Team.</p>
                         <a href="#" class="btn-small">View Project</a>
                     </div>
                 </div>
@@ -176,6 +176,34 @@
             </form>
         </div>
     </section>
+
+<section class="music-section section reveal">
+    <div class="container">
+        <div class="custom-player">
+            <h3 style="color: var(--secondary); margin-bottom: 20px; text-align: center;">
+                <i class='bx bxl-spotify' style="color: var(--primary);"></i> My Favorite Vibe
+            </h3>
+            
+            <div class="player-controls">
+                <div class="song-info" style="flex: 1; min-width: 0;">
+                    <div class="spotify-logo-wrapper">
+                        <i class='bx bxl-spotify'></i>
+                    </div>
+                    <div style="min-width: 0; overflow: hidden;">
+                        <p class="song-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Wonderwall</p>
+                        <p class="song-artist">Oasis</p>
+                    </div>
+                </div>
+                
+                <audio id="mainAudio" src="music/Oasis - Wonderwall.mp3"></audio>
+                
+                <button onclick="togglePlay()" id="playBtn" class="play-circle">
+                    <i class='bx bx-play' id="playIcon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
 </main>
 
 <footer class="footer">
